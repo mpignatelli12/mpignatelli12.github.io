@@ -2,57 +2,74 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Michael Pignatelli | Home</title>
-    <!-- Load both Roboto and Source Code Pro -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Google Font: Atkinson Hyperlegible -->
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="favicon.ico" />
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <h1>Michael Pignatelli</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+    <!-- Navigation (inspired by CIS1100 but adapted) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Michael Pignatelli</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
                 </ul>
-            </nav>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Section (No background image) -->
+    <!-- Hero Section (no background image, just a gentle gradient) -->
     <main>
-        <section class="hero">
-            <div class="container">
-                <h2>Hi, I'm Michael.</h2>
-                <p>
-                    I'm a computer science student passionate about AI and computer vision. Explore my work and
-                    experience.
+        <section class="hero py-5">
+            <div class="container text-center">
+                <h1 class="display-4">Hi, I'm Michael Pignatelli</h1>
+                <p class="lead">
+                    I'm a computer science student passionate about AI, computer vision,
+                    and programming.
                 </p>
-                <a href="projects.html" class="btn">Explore Projects</a>
+                <a href="projects.html" class="btn btn-accent">Explore My Projects</a>
             </div>
         </section>
     </main>
 
-    <!-- Footer with Attribution -->
-    <footer>
-        <div class="container">
+    <!-- Footer with attribution -->
+    <footer class="py-3 bg-dark text-white">
+        <div class="container text-center">
             <p>&copy; 2025 Michael Pignatelli. All Rights Reserved.</p>
-            <p class="attribution">
-                Design heavily inspired by the aesthetic of the CIS 1100 website at UPenn, using its signature cyan,
-                yellow, and magenta accents.
+            <p class="small">
+                Design inspired by the CIS 1100 website at UPenn (using cyan, yellow, and
+                magenta accents).
             </p>
         </div>
     </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

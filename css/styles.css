@@ -5,17 +5,19 @@
     box-sizing: border-box;
 }
 
-/* CSS Variables for easy theme management */
+/* CSS Variables for theme management */
 :root {
-    --primary-color: #2D2D2D;
-    /* Dark background for header/footer */
-    --accent-color: #2ACFCF;
-    /* Bright cyan accent */
-    --background-color: #F5F5F5;
-    /* Light overall background */
+    --primary-color: #011F5B;
+    /* Deep blue (inspired by UPenn) */
+    --accent-color: #FFC20E;
+    /* Gold accent */
+    --background-color: #FFFFFF;
+    /* White background */
+    --hero-bg: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+    /* Subtle gradient, no image */
     --text-color: #333;
     --header-text-color: #fff;
-    --card-background: #fff;
+    --card-background: #FFFFFF;
     --card-shadow: rgba(0, 0, 0, 0.1);
     --transition-speed: 0.3s;
 }
@@ -81,11 +83,10 @@ nav ul li a.active {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(45, 45, 45, 0.7), rgba(45, 45, 45, 0.7)),
-        url('../images/hero-bg.jpg') no-repeat center center/cover;
+    background: var(--hero-bg);
     padding: 100px 0;
     text-align: center;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .hero h2 {
@@ -110,14 +111,13 @@ nav ul li a.active {
 }
 
 .btn:hover {
-    background: #23b5b5;
+    background: #e6b107;
     /* Slightly darker accent */
 }
 
 /* About Section */
 .about {
     padding: 80px 0;
-    background: var(--background-color);
 }
 
 .about h2 {
@@ -135,7 +135,6 @@ nav ul li a.active {
 /* Projects Section */
 .projects {
     padding: 80px 0;
-    background: var(--background-color);
 }
 
 .projects h2 {
@@ -176,7 +175,6 @@ nav ul li a.active {
 /* Contact Section */
 .contact {
     padding: 80px 0;
-    background: var(--background-color);
 }
 
 .contact h2 {
@@ -218,6 +216,20 @@ footer {
     color: var(--header-text-color);
     font-size: 0.9em;
     margin-top: 40px;
+}
+
+footer .attribution {
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+footer .attribution a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+footer .attribution a:hover {
+    text-decoration: underline;
 }
 
 /* Responsive Design */

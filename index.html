@@ -2,129 +2,46 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Pignatelli's Personal Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Optional for external CSS -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- For a .ico file -->
-    <style>
-        /* Basic CSS styles for the page */
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background: #0064aa;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        section {
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            max-width: 800px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-links a {
-            margin-right: 15px;
-            text-decoration: none;
-            color: #333;
-        }
-
-        footer {
-            background: #c8b67f;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michael Pignatelli | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
     <header>
-        <h1>Michael Pignatelli</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Michael Pignatelli</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm Michael Pignatelli, a student at the University of Pennsylvania studying computer science with a
-            concentration in computer vision/AI.<br><br>
-            I'm currently taking classes in computer systems, algorithms, data structures, artificial intelligence,
-            probability, and machine
-            learning for embedded systems.<br><br>
-            I am currently a teaching assistant for <a href="https://www.cis.upenn.edu/~cis110/current/py/index.html"
-                target="_blank">CIS 1100: Intro to Computer Programming</a>.<br><br>
-            I'm passionate about developing technologies and their potential to drive positive change!</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="https://github.com/mpignatelli12/PedestrianBuddies" target="_blank">Pedestrian Buddies</a> -
-                Created as a final project for ESE 3600, this project involved the physical integration of a traffic
-                signal with a computer vision system to detect gestures by a crossing guard. This project, done
-                alongside Zeno Dancanet, involved the training of a model using a self-collected dataset of gesture
-                images, taking advantage of the TensorFlow and TensorFlow Lite Python libraries.</li>
-            <li><a href="https://github.com/mpignatelli12/GuessWhoGame" target="_blank">Guess Who?</a> - Created as a
-                final project for CIS 1200, this is a Java Swing-based game inspired by the classic board game "Guess
-                Who?".</li>
-            <!-- <li><a href="https://github.com/your-username/project2" target="_blank">Project 2</a> - A brief description of Project 2.</li> -->
-            <!-- Add more projects as needed -->
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:mpig@seas.upenn.edu">mpig@seas.upenn.edu</a></p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/mpignatelli" target="_blank">
-                <img href="linkedin-icon.png" alt="LinkedIn">
-            </a>
-            <a href="https://github.com/mpignatelli12" target="_blank">
-                <img href="github-icon.png" alt="GitHub">
-            </a>
-            <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/mpignatelli12/mpignatelli12.github.io/487b1c936b5a4550244d28dc5d4487de86144650/Resume_OCT24.pdf"
-                target="_blank">
-                <img href="resume-icon.png" alt="Resume">
-            </a>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Welcome!</h2>
+                <p>
+                    I am Michael Pignatelli, a computer science student at the University of Pennsylvania specializing
+                    in computer vision and AI. Explore my projects and experience to learn more!
+                </p>
+                <a href="projects.html" class="btn">View My Projects</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Michael Pignatelli. All Rights Reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 Michael Pignatelli. All Rights Reserved.</p>
+        </div>
     </footer>
 </body>
 

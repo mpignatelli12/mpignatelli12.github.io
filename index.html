@@ -29,18 +29,10 @@
             </button>
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -49,28 +41,25 @@
     <!-- Hero Section with Particles.js Background -->
     <main>
         <section class="hero">
-            <!-- Particles Container -->
+            <!-- Particles Background Container -->
             <div id="particles-js" class="particles-bg"></div>
-            <!-- Hero Content (centered via flexbox) -->
+            <!-- Hero Content (centered via Flexbox) -->
             <div class="hero-content">
                 <h1 class="display-4">Hi, I'm Michael Pignatelli</h1>
-                <p class="lead">
-                    I'm a computer science student passionate about AI, computer vision, and innovative programming.
-                </p>
+                <p class="lead">I'm a computer science student passionate about AI, computer vision, and innovative
+                    programming.</p>
                 <a href="projects.html" class="btn btn-accent">Explore My Projects</a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="py-3 bg-dark text-white">
+    <!-- Fixed Footer with Discreet Credits Link -->
+    <footer class="footer bg-dark text-white">
         <div class="container text-center">
             <p>&copy; 2025 Michael Pignatelli. All Rights Reserved.</p>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#creditsModal" class="credits-link">Credits</a>
         </div>
     </footer>
-
-    <!-- Discreet Credits Link (only on Home Page) -->
-    <a href="#" data-bs-toggle="modal" data-bs-target="#creditsModal" class="home-credits">Credits</a>
 
     <!-- Credits Modal -->
     <div class="modal fade" id="creditsModal" tabindex="-1" aria-labelledby="creditsModalLabel" aria-hidden="true">
@@ -85,7 +74,7 @@
                         <li>LinkedIn icon: [Source URL]</li>
                         <li>GitHub icon: [Source URL]</li>
                         <li>Resume icon: [Source URL]</li>
-                        <!-- Add additional credits as needed -->
+                        <!-- Additional credits as needed -->
                     </ul>
                 </div>
             </div>
@@ -94,9 +83,9 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Particles.js (via CDN) -->
+    <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <!-- ScrollReveal (via CDN) -->
+    <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Custom JavaScript -->
     <script>
@@ -105,44 +94,42 @@
             "particles": {
                 "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
                 "color": { "value": "#0dcaf0" },
-                "shape": {
-                    "type": "circle",
-                    "stroke": { "width": 0, "color": "#000000" },
-                    "polygon": { "nb_sides": 5 }
-                },
+                "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000" } },
                 "opacity": { "value": 0.5, "random": true },
                 "size": { "value": 3, "random": true },
                 "line_linked": { "enable": true, "distance": 150, "color": "#ffc107", "opacity": 0.4, "width": 1 },
-                "move": { "enable": true, "speed": 3, "direction": "none", "random": false, "straight": false, "bounce": false }
+                "move": { "enable": true, "speed": 3 }
             },
             "interactivity": {
                 "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "repulse" },
-                    "onclick": { "enable": true, "mode": "push" },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": { "distance": 400, "line_linked": { "opacity": 1 } },
-                    "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8 },
-                    "repulse": { "distance": 100 },
-                    "push": { "particles_nb": 4 },
-                    "remove": { "particles_nb": 2 }
-                }
+                "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                "modes": { "repulse": { "distance": 100 } }
             },
             "retina_detect": true
         });
 
-        /* ScrollReveal Animations (slide up from bottom) */
+        /* ScrollReveal Animations for Hero Content */
         ScrollReveal().reveal('.hero-content h1', { delay: 200, distance: '20px', origin: 'bottom' });
         ScrollReveal().reveal('.hero-content p', { delay: 400, distance: '20px', origin: 'bottom' });
         ScrollReveal().reveal('.btn-accent', { delay: 600, distance: '20px', origin: 'bottom' });
 
         /* Custom Cursor */
         const cursor = document.getElementById("cursor");
-        document.addEventListener("mousemove", e => {
+        document.addEventListener("mousemove", (e) => {
             cursor.style.left = e.pageX + "px";
             cursor.style.top = e.pageY + "px";
+        });
+
+        /* Hero Content Scroll Effect: As you scroll, the hero subtext moves smoothly into center */
+        const hero = document.querySelector('.hero');
+        const heroContent = document.querySelector('.hero-content');
+        const initialOffset = 50; // initial offset (in px)
+        window.addEventListener('scroll', () => {
+            const heroHeight = hero.offsetHeight;
+            const scrollY = window.scrollY;
+            let progress = Math.min(scrollY / heroHeight, 1);
+            let translateY = initialOffset * (1 - progress);
+            heroContent.style.transform = `translateY(${translateY}px)`;
         });
     </script>
 </body>

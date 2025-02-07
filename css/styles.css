@@ -10,11 +10,11 @@ body {
     --primary-color: #011F5B;
     /* Dark blue for navbar & footer */
     --accent-cyan: #0dcaf0;
-    /* Cyan accent for buttons */
+    /* Cyan accent */
     --accent-yellow: #ffc107;
-    /* Yellow accent (for interactive details) */
+    /* Yellow accent */
     --accent-magenta: #d63384;
-    /* Magenta accent (for interactive details) */
+    /* Magenta accent */
     --hero-bg: linear-gradient(135deg, #f5f5f5, #e0e0e0);
     /* Fallback gradient */
 }
@@ -30,8 +30,8 @@ body {
 
 .btn-accent:hover,
 .btn-accent:focus {
-    background-color: var(--accent-cyan);
-    filter: brightness(90%);
+    background-color: var(--accent-yellow);
+    /* Button turns yellow on hover */
     color: #000;
 }
 
@@ -63,9 +63,11 @@ body {
     justify-content: center;
     text-align: center;
     max-width: 90%;
+    transform: translateY(50px);
+    /* Initial offset for scroll effect */
 }
 
-/* Card Styles with Extra Interactivity */
+/* Card Styles with Extra Interactivity (Projects Page) */
 .card {
     border: none;
     border-radius: 0.5rem;
@@ -86,29 +88,39 @@ body {
 }
 
 .card:hover .card-title {
-    color: var(--accent-yellow);
+    color: var(--accent-magenta);
+    /* Card title turns magenta on hover */
 }
 
-/* Footer */
-footer p {
-    margin: 0;
-}
-
-/* Discreet Home Credits Link */
-.home-credits {
+/* Fixed Footer at Bottom */
+.footer {
     position: fixed;
-    bottom: 10px;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.footer p {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+}
+
+/* Discreet Credits Link inside Footer */
+.credits-link {
+    position: absolute;
     right: 10px;
+    bottom: 5px;
     font-size: 0.7rem;
     color: #888;
     text-decoration: none;
-    z-index: 1000;
     opacity: 0.5;
     transition: opacity 0.3s ease;
 }
 
-.home-credits:hover {
+.credits-link:hover {
     opacity: 1;
+    color: var(--accent-cyan);
 }
 
 /* Custom Cursor */
@@ -121,6 +133,226 @@ footer p {
     pointer-events: none;
     transform: translate(-50%, -50%);
     z-index: 9999;
+}
+
+/* Additional Interactivity for About Page (example interactive box) */
+.interactive-box {
+    border: 2px solid var(--accent-cyan);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.interactive-box:hover {
+    transform: scale(1.03);
+}
+
+.interactive-box .full-text {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.interactive-box:hover .full-text {
+    opacity: 1;
+    max-height: 200px;
+}
+
+/* Additional Interactivity for Contact Page */
+/* For example, hover effect on the email link */
+.contact a.email-link {
+    transition: transform 0.3s ease;
+}
+
+.contact a.email-link:hover {
+    transform: scale(1.05);
+}
+
+/* Social Links Hover Effect */
+.social-links a img {
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover img {
+    transform: scale(1.1);
+}
+
+/* Base Font */
+body {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Accent Colors & Variables */
+:root {
+    --primary-color: #011F5B;
+    /* Dark blue for navbar & footer */
+    --accent-cyan: #0dcaf0;
+    /* Cyan accent */
+    --accent-yellow: #ffc107;
+    /* Yellow accent */
+    --accent-magenta: #d63384;
+    /* Magenta accent */
+    --hero-bg: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+    /* Fallback gradient */
+}
+
+/* Custom Accent Button (Solid Color) */
+.btn-accent {
+    background-color: var(--accent-cyan);
+    border: none;
+    color: #000;
+    font-weight: 700;
+    transition: background 0.4s ease;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+    background-color: var(--accent-yellow);
+    /* Button turns yellow on hover */
+    color: #000;
+}
+
+/* Hero Section: Centered Content */
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 90%;
+    transform: translateY(50px);
+    /* Initial offset for scroll effect */
+}
+
+/* Card Styles with Extra Interactivity (Projects Page) */
+.card {
+    border: none;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover .card-body {
+    border-left: 4px solid var(--accent-magenta);
+}
+
+.card-title {
+    transition: color 0.3s ease;
+}
+
+.card:hover .card-title {
+    color: var(--accent-magenta);
+    /* Card title turns magenta on hover */
+}
+
+/* Fixed Footer at Bottom */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.footer p {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+}
+
+/* Discreet Credits Link inside Footer */
+.credits-link {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    font-size: 0.7rem;
+    color: #888;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.credits-link:hover {
+    opacity: 1;
+    color: var(--accent-cyan);
+}
+
+/* Custom Cursor */
+#cursor {
+    width: 15px;
+    height: 15px;
+    background-color: var(--accent-magenta);
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* Additional Interactivity for About Page (example interactive box) */
+.interactive-box {
+    border: 2px solid var(--accent-cyan);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.interactive-box:hover {
+    transform: scale(1.03);
+}
+
+.interactive-box .full-text {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.interactive-box:hover .full-text {
+    opacity: 1;
+    max-height: 200px;
+}
+
+/* Additional Interactivity for Contact Page */
+/* For example, hover effect on the email link */
+.contact a.email-link {
+    transition: transform 0.3s ease;
+}
+
+.contact a.email-link:hover {
+    transform: scale(1.05);
 }
 
 /* Social Links Hover Effect */

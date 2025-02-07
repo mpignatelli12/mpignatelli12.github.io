@@ -19,7 +19,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Michael Pignatelli</a>
+            <a class="navbar-brand brand-name" href="index.html">Michael Pignatelli</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
                 aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -38,18 +38,29 @@
     <!-- Contact Section -->
     <main>
         <section class="contact py-5">
-            <div class="container text-center">
-                <h2 class="mb-4">Contact Me</h2>
-                <p>
-                    If you'd like to get in touch, email me at
-                    <a href="mailto:mpig@seas.upenn.edu" class="email-link">mpig@seas.upenn.edu</a>.
-                </p>
+            <div class="container">
+                <h2 class="mb-4 text-center">Contact Me</h2>
+
+                <!-- Contact Card Section -->
+                <div class="card mx-auto shadow-sm" style="max-width: 500px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Get in Touch</h5>
+                        <p class="card-text">
+                            <strong>Professional Email:</strong> <a href="mailto:mp@michaelpignatelli.com"
+                                class="email-link">mp@michaelpignatelli.com</a><br>
+                            <strong>University Email:</strong> <a href="mailto:mpig@seas.upenn.edu"
+                                class="email-link">mpig@seas.upenn.edu</a>
+                        </p>
+                    </div>
+                </div>
 
                 <!-- Collapsible Contact Form -->
-                <button class="btn btn-accent mt-3" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
-                    Show Contact Form
-                </button>
+                <div class="text-center mt-4">
+                    <button class="btn btn-accent" type="button" data-bs-toggle="collapse" data-bs-target="#contactForm"
+                        aria-expanded="false" aria-controls="contactForm">
+                        Show Contact Form
+                    </button>
+                </div>
                 <div class="collapse mt-3" id="contactForm">
                     <div class="card card-body">
                         <form>
@@ -74,7 +85,7 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Fixed Footer -->
     <footer class="footer bg-dark text-white">
         <div class="container text-center">
             <p>&copy; 2025 Michael Pignatelli. All Rights Reserved.</p>
@@ -86,7 +97,7 @@
     <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-        // Reveal animations for the contact section elements
+        // Animate contact elements
         ScrollReveal().reveal('.email-link', { delay: 200, distance: '10px', origin: 'bottom' });
         ScrollReveal().reveal('.btn-accent', { delay: 400, distance: '10px', origin: 'bottom' });
         ScrollReveal().reveal('#contactForm', { delay: 600, distance: '10px', origin: 'bottom' });

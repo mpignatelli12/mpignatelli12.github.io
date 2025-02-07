@@ -48,11 +48,11 @@
 
     <!-- Hero Section with Particles.js Background -->
     <main>
-        <section class="hero position-relative">
+        <section class="hero">
             <!-- Particles Container -->
             <div id="particles-js" class="particles-bg"></div>
             <!-- Hero Content -->
-            <div class="hero-content text-center position-relative">
+            <div class="hero-content">
                 <h1 class="display-4">Hi, I'm Michael Pignatelli</h1>
                 <p class="lead">
                     I'm a computer science student passionate about AI, computer vision, and innovative programming.
@@ -78,7 +78,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="creditsModalLabel">Image & Asset Credits</h5>
+                    <h5 class="modal-title" id="creditsModalLabel">Image &amp; Asset Credits</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -135,9 +135,9 @@
         });
 
         /* ScrollReveal Animations */
-        ScrollReveal().reveal('.hero-content h1', { delay: 200, distance: '50px', origin: 'left' });
-        ScrollReveal().reveal('.hero-content p', { delay: 400, distance: '30px', origin: 'bottom' });
-        ScrollReveal().reveal('.btn-accent', { delay: 600, distance: '20px', origin: 'bottom' });
+        ScrollReveal().reveal('.hero-content h1', { delay: 200, distance: '20px', origin: 'top' });
+        ScrollReveal().reveal('.hero-content p', { delay: 400, distance: '20px', origin: 'top' });
+        ScrollReveal().reveal('.btn-accent', { delay: 600, distance: '20px', origin: 'top' });
 
         /* Custom Cursor */
         const cursor = document.getElementById("cursor");

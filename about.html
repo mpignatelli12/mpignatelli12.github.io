@@ -26,18 +26,10 @@
             </button>
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -49,21 +41,28 @@
             <div class="container">
                 <h2 class="mb-4 text-center">About Me</h2>
                 <p>
-                    Hello! I'm Michael Pignatelli, a computer science student at the University of Pennsylvania. My
-                    interests include computer vision, AI, and building creative software solutions. I also work as a
-                    teaching assistant for introductory programming courses, mentoring new programmers along the way.
+                    Hello! I'm Michael Pignatelli, a computer science student at the University of Pennsylvania. I
+                    specialize in computer vision, AI, and creative software solutions. My academic journey and passion
+                    for technology drive me to innovate and build projects that make an impact.
                 </p>
+
+                <!-- Interactive "Did you know?" Block -->
+                <div class="interactive-box mt-4">
+                    <p class="short-text"><strong>Did you know?</strong></p>
+                    <p class="full-text">I once built a computer when I was 11 years old! This was one of the core
+                        experiences that led me to pursue an engineering career.</p>
+                </div>
+
+                <!-- Resume Button -->
+                <div class="text-center mt-4">
+                    <a href="docs/resume.pdf" target="_blank" class="btn btn-accent">View My Resume</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <div class="interactive-box">
-        <p class="short-text">Did you know?</p>
-        <p class="full-text">I once built a computer when I was 11 years old!</p>
-    </div>
-
     <!-- Footer -->
-    <footer class="py-3 bg-dark text-white">
+    <footer class="footer bg-dark text-white">
         <div class="container text-center">
             <p>&copy; 2025 Michael Pignatelli. All Rights Reserved.</p>
         </div>
@@ -71,6 +70,13 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ScrollReveal (for animation) -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        // Reveal the interactive box and resume button when they enter the viewport
+        ScrollReveal().reveal('.interactive-box', { delay: 200, distance: '20px', origin: 'bottom' });
+        ScrollReveal().reveal('.btn-accent', { delay: 400, distance: '20px', origin: 'bottom' });
+    </script>
 </body>
 
 </html>

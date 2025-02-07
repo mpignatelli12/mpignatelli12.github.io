@@ -19,14 +19,14 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <!-- Notice the additional class "brand-name" for custom styling -->
+            <!-- Brand with custom styling -->
             <a class="navbar-brand brand-name" href="index.html">Michael Pignatelli</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
                 aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto text-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
@@ -39,41 +39,40 @@
     <!-- About Section -->
     <main>
         <section class="about py-5">
-            <div class="container">
-                <h2 class="mb-4 text-center">About Me</h2>
+            <div class="container text-center">
+                <h2 class="mb-4">About Me</h2>
                 <p>
                     Hello! I'm Michael Pignatelli, a computer science student at the University of Pennsylvania. I
                     specialize in computer vision, AI, and creative software solutions. I also have a passion for
-                    cognitive science, and aim to pursue studies in this field. My academic journey drives me to
-                    innovate to build projects and inspire others in a way that has an impact.
+                    cognitive science and aim to pursue studies in this field. My academic journey drives me to
+                    innovate, build projects, and inspire others.
                 </p>
                 <!-- Teaching Assistant Note -->
                 <p class="mt-3">
                     I also serve as a teaching assistant for <a href="https://cis1100.com" target="_blank">CIS 1100</a>,
-                    where I help introduce approximately 300 students per semester to computer science. I am the head of
-                    the EdStem Committee, which organizes our class discussion board and ensures that student questions
-                    are answered swiftly and accurately. I am also a member of the Infrastructure Committee, where I am
-                    responsible for keeping the course website updated and helping with the management of tasks among
-                    the staff.
+                    where I help introduce approximately 300 students per semester to computer science. I lead the
+                    EdStem Committee and contribute to the Infrastructure Committee.
                 </p>
 
-                <!-- Interactive "Did you know?" Block -->
-                <div class="interactive-box mt-4">
-                    <p class="short-text"><strong>Did you know?</strong></p>
-                    <p class="full-text">I once built a computer when I was 11 years old! This was one of the core
-                        experiences that led me to pursue an engineering career.</p>
-                </div>
-                <div class="interactive-box mt-4">
-                    <p class="short-text"><strong>Did you know?</strong></p>
-                    <p class="full-text">I am an active member of the recovery and avionics subteam of the University of
-                        Pennsylvania's High Powered Rocketry team.</p>
-                </div>
-                <div class="interactive-box mt-4">
-                    <p class="short-text"><strong>Did you know?</strong></p>
-                    <p class="full-text">I am an avid musician and have played the clarinet for over a decade.</p>
+                <!-- Horizontal Interactive "Did You Know?" Blocks -->
+                <div class="d-flex flex-row justify-content-center gap-3 mt-4 interactive-container">
+                    <div class="interactive-box">
+                        <p class="short-text"><strong>Did you know?</strong></p>
+                        <p class="full-text">I once built a computer when I was 11 years old! This core experience led
+                            me to pursue engineering.</p>
+                    </div>
+                    <div class="interactive-box">
+                        <p class="short-text"><strong>Did you know?</strong></p>
+                        <p class="full-text">I'm an active member of the recovery and avionics subteam of UPenn's High
+                            Powered Rocketry team.</p>
+                    </div>
+                    <div class="interactive-box">
+                        <p class="short-text"><strong>Did you know?</strong></p>
+                        <p class="full-text">I'm an avid musician and have played the clarinet for over a decade.</p>
+                    </div>
                 </div>
 
-                <!-- Resume Button (links to your resume.pdf in the repo root) -->
+                <!-- Resume Button -->
                 <div class="text-center mt-4">
                     <a href="/resume.pdf" target="_blank" class="btn btn-accent">View My Resume</a>
                 </div>
@@ -93,7 +92,7 @@
     <!-- ScrollReveal (for animation) -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-        // Animate interactive box and resume button
+        // Animate interactive boxes and resume button
         ScrollReveal().reveal('.interactive-box', { delay: 200, distance: '20px', origin: 'bottom' });
         ScrollReveal().reveal('.btn-accent', { delay: 400, distance: '20px', origin: 'bottom' });
     </script>

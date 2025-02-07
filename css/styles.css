@@ -1,9 +1,11 @@
-/* Apply Atkinson Hyperlegible to all text */
+/* Base Font */
 body {
     font-family: 'Atkinson Hyperlegible', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Define accent colors */
+/* Accent Colors & Variables */
 :root {
     --primary-color: #011F5B;
     /* Dark blue for navbar & footer */
@@ -14,15 +16,16 @@ body {
     --accent-magenta: #d63384;
     /* Magenta accent */
     --hero-bg: linear-gradient(135deg, #f5f5f5, #e0e0e0);
-    /* Gentle gradient for hero */
+    /* Fallback gentle gradient */
 }
 
-/* Custom accent button */
+/* Custom Accent Button */
 .btn-accent {
     background-color: var(--accent-cyan);
     border: none;
     color: #000;
     font-weight: 700;
+    transition: background 0.4s ease;
 }
 
 .btn-accent:hover,
@@ -33,10 +36,30 @@ body {
 
 /* Hero Section */
 .hero {
-    background: var(--hero-bg);
+    position: relative;
+    overflow: hidden;
+    min-height: 80vh;
 }
 
-/* Card customization */
+/* Particles.js container (fills the hero section) */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Hero Content positioned above particles */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 120px 15px;
+    color: var(--primary-color);
+}
+
+/* Card Styles */
 .card {
     border: none;
     border-radius: 0.5rem;
@@ -48,12 +71,34 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer: reset paragraph margins */
+/* Footer */
 footer p {
     margin: 0;
 }
 
-/* Social links hover effect */
+/* Credits Link */
+.credits-link {
+    color: #bbb;
+    font-size: 0.8rem;
+}
+
+.credits-link:hover {
+    color: var(--accent-cyan);
+}
+
+/* Custom Cursor */
+#cursor {
+    width: 15px;
+    height: 15px;
+    background-color: var(--accent-magenta);
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* Social Links Hover Effect */
 .social-links a img {
     transition: transform 0.3s ease;
 }

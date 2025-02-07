@@ -1,12 +1,12 @@
-/* Use Atkinson Hyperlegible for all text */
+/* Apply Atkinson Hyperlegible to all text */
 body {
     font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
-/* Define accent colors inspired by CIS1100 */
+/* Define accent colors */
 :root {
     --primary-color: #011F5B;
-    /* Dark blue (navbar & footer) */
+    /* Dark blue for navbar & footer */
     --accent-cyan: #0dcaf0;
     /* Cyan accent */
     --accent-yellow: #ffc107;
@@ -17,7 +17,7 @@ body {
     /* Gentle gradient for hero */
 }
 
-/* Custom accent button class */
+/* Custom accent button */
 .btn-accent {
     background-color: var(--accent-cyan);
     border: none;
@@ -36,7 +36,7 @@ body {
     background: var(--hero-bg);
 }
 
-/* (Optional) Additional customizations for card components */
+/* Card customization */
 .card {
     border: none;
     border-radius: 0.5rem;
@@ -48,12 +48,12 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Ensure footer text margins are reset */
+/* Footer: reset paragraph margins */
 footer p {
     margin: 0;
 }
 
-/* Social link images hover effect */
+/* Social links hover effect */
 .social-links a img {
     transition: transform 0.3s ease;
 }

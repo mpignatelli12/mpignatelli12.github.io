@@ -27,8 +27,9 @@ body {
     transition: color 0.3s ease;
 }
 
-.brand-name:hover {
-    color: var(--accent-magenta);
+.navbar .brand-name:hover,
+.navbar .brand-name:focus {
+    color: var(--accent-magenta) !important;
 }
 
 /* Custom Accent Button (Solid Color) */
@@ -79,7 +80,69 @@ body {
     /* Initial offset for scroll effect */
 }
 
-/* Card Styles with Extra Interactivity (Projects Page) */
+/* Horizontal Interactive "Did You Know?" Container */
+.interactive-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.interactive-box {
+    flex: 1 1 250px;
+    border: 2px solid var(--accent-cyan);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.interactive-box:hover {
+    transform: scale(1.03);
+}
+
+.interactive-box .full-text {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    margin-top: 10px;
+}
+
+.interactive-box:hover .full-text {
+    opacity: 1;
+    max-height: 100px;
+    /* Adjust as needed */
+}
+
+/* Skills Section Cards (About Page) */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.skill-card {
+    flex: 1 1 200px;
+    border: 2px solid var(--accent-cyan);
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Styles for Projects remain unchanged */
 .card {
     border: none;
     border-radius: 0.5rem;
@@ -146,44 +209,6 @@ body {
     z-index: 9999;
 }
 
-/* Horizontal Interactive "Did You Know?" Container (About Page) */
-.interactive-container {
-    display: flex;
-    flex-wrap: wrap;
-    /* Allow wrapping so that boxes fit */
-    gap: 1rem;
-    justify-content: center;
-    padding: 1rem 0;
-}
-
-.interactive-box {
-    min-width: 250px;
-    border: 2px solid var(--accent-cyan);
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.interactive-box:hover {
-    transform: scale(1.03);
-}
-
-.interactive-box .full-text {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 0.3s ease, max-height 0.3s ease;
-    margin-top: 10px;
-}
-
-.interactive-box:hover .full-text {
-    opacity: 1;
-    max-height: 100px;
-    /* Adjust as needed */
-}
-
 /* Additional Interactivity for Contact Page */
 .email-link {
     transition: transform 0.3s ease, color 0.3s ease;
@@ -201,4 +226,19 @@ body {
 
 .social-links a:hover img {
     transform: scale(1.1);
+}
+
+/* Extra: Center all text on pages (if needed) */
+.text-center {
+    text-align: center !important;
+}
+
+/* Contact Card Hover: Magenta borders on both sides */
+.contact-card .card-body {
+    transition: border 0.3s ease;
+}
+
+.contact-card:hover .card-body {
+    border-left: 4px solid var(--accent-magenta);
+    border-right: 4px solid var(--accent-magenta);
 }

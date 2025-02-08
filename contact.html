@@ -42,7 +42,7 @@
                 <h2 class="mb-4">Contact Me</h2>
 
                 <!-- Contact Card with Email Info -->
-                <div class="card mx-auto shadow-sm" style="max-width: 500px;">
+                <div class="card contact-card mx-auto shadow-sm" style="max-width: 500px;">
                     <div class="card-body">
                         <h5 class="card-title">Get in Touch</h5>
                         <p class="card-text">
@@ -54,7 +54,7 @@
                     </div>
                 </div>
 
-                <!-- Social Icons (centered outside the card) -->
+                <!-- Social Icons -->
                 <div class="social-links my-4">
                     <a href="https://github.com/mpignatelli12" target="_blank" class="mx-2">
                         <img src="images/github-icon.png" alt="GitHub" width="40" height="40">
@@ -62,23 +62,22 @@
                     <a href="https://www.linkedin.com/in/mpignatelli" target="_blank" class="mx-2">
                         <img src="images/linkedin-icon.png" alt="LinkedIn" width="40" height="40">
                     </a>
-                    <a href="https://drive.google.com/file/d/15Z5GFqHnN_HT5Vz-zQ6BU0MKUQGFM6w4/view?usp=sharing"
-                        target="_blank" class="mx-2"> <img src="images/resume-icon.png" alt="Resume" width="40"
-                            height="40">
+                    <a href="/resume.pdf" target="_blank" class="mx-2">
+                        <img src="images/resume-icon.png" alt="Resume" width="40" height="40">
                     </a>
                 </div>
 
                 <!-- Contact Form -->
                 <div class="mt-4">
-                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <form action="https://formspree.io/f/xjkgoayk" method="POST">
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                            <input type="email" class="form-control" name="_replyto" placeholder="Your Email" required>
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control" id="message" rows="3" placeholder="Your Message"
+                            <textarea class="form-control" name="message" rows="3" placeholder="Your Message"
                                 required></textarea>
                         </div>
                         <button type="submit" class="btn btn-accent">Send Message</button>
@@ -100,15 +99,15 @@
     <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-        // Animate email links, social icons, and contact form elements
+        // Animate contact card, social icons, and form
         ScrollReveal().reveal('.email-link', { delay: 200, distance: '10px', origin: 'bottom' });
         ScrollReveal().reveal('.btn-accent', { delay: 400, distance: '10px', origin: 'bottom' });
         ScrollReveal().reveal('#contactForm', { delay: 600, distance: '10px', origin: 'bottom' });
 
-        // Basic contact form submission handler
+        // Basic contact form handler: Replace this with a service (e.g., Formspree) to actually send email.
         function handleSubmit(event) {
             event.preventDefault();
-            alert("Thank you, your message has been sent!");
+            alert("Thank you! Your message has been sent.");
             document.getElementById("contactForm").reset();
         }
     </script>

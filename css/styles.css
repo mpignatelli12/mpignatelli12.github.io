@@ -24,6 +24,11 @@ body {
     font-weight: bold;
     font-size: 1.25rem;
     color: var(--accent-cyan);
+    transition: color 0.3s ease;
+}
+
+.brand-name:hover {
+    color: var(--accent-magenta);
 }
 
 /* Custom Accent Button (Solid Color) */
@@ -143,18 +148,16 @@ body {
 
 /* Horizontal Interactive "Did You Know?" Container (About Page) */
 .interactive-container {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 1rem 0;
     display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping so that boxes fit */
     gap: 1rem;
     justify-content: center;
+    padding: 1rem 0;
 }
 
 .interactive-box {
     min-width: 250px;
-    scroll-snap-align: center;
-    flex-shrink: 0;
     border: 2px solid var(--accent-cyan);
     padding: 20px;
     border-radius: 10px;

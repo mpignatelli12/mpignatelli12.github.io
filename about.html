@@ -48,11 +48,11 @@
                 </p>
                 <!-- Teaching Assistant Note -->
                 <p class="mt-3">
-                    I also serve as a teaching assistant for <a href="https://cis1100.com" target="_blank">CIS 1100</a>,
-                    where I help introduce approximately 300 students per semester to computer science. I lead the
-                    EdStem Committee where I ensure the swift and accurate response to student questions on our course
-                    forum. I am also an active member of the Infrastructure Committee, where I am tasked with
-                    maintaining the course website.
+                    I also serve as a teaching assistant for <a href="https://cis1100.com" class="email-link"
+                        target="_blank">CIS 1100</a>,
+                    where I help introduce approximately 300 students each semester to computer science. I lead the
+                    EdStem Committee where I ensure the swift and accurate response to student questions, and contribute
+                    to the Infrastructure Committee.
                 </p>
 
                 <!-- Horizontal Interactive "Did You Know?" Blocks -->
@@ -77,25 +77,36 @@
                 <div class="skills-container mt-5">
                     <div class="skill-card">
                         <h5>Technical Skills</h5>
-                        <p>Machine Learning, Computer Vision, Signal Processing, Robotics</p>
+                        <p class="skill-item">Machine Learning Model Development (TensorFlow, Keras, PyTorch)</p>
+                        <p class="skill-item">Pandas, NumPy, Docker, Jupyter NB</p>
+                        <p class="skill-item">GitHub, AWS, XML, Mathematica, Office/Excel, GSuite, SPSS</p>
                     </div>
                     <div class="skill-card">
                         <h5>Programming Proficiency</h5>
-                        <p>Python, Java, C, C++, OCaml, LaTeX</p>
+                        <p class="skill-item">Python</p>
+                        <p class="skill-item">Java</p>
+                        <p class="skill-item">C, C++</p>
+                        <p class="skill-item">OCaml</p>
+                        <p class="skill-item">LaTeX</p>
                     </div>
                     <div class="skill-card">
                         <h5>Programming Familiarity</h5>
-                        <p>SQL, Swift, HTML, MATLAB, JavaScript</p>
+                        <p class="skill-item">SQL</p>
+                        <p class="skill-item">Swift</p>
+                        <p class="skill-item">HTML</p>
+                        <p class="skill-item">JavaScript</p>
+                        <p class="skill-item">MATLAB</p>
                     </div>
                     <div class="skill-card">
                         <h5>Verbal Languages</h5>
-                        <p>English (Native), Italian (Advanced)</p>
+                        <p class="skill-item">English (Native)</p>
+                        <p class="skill-item">Italian (Advanced)</p>
                     </div>
                 </div>
 
                 <!-- Resume Button -->
                 <div class="text-center mt-4">
-                    <a href="/resume.pdf" target="_blank" class="btn btn-accent">View My Resume</a>
+                    <a href="/docs/resume.pdf" target="_blank" class="btn btn-accent">View My Resume</a>
                 </div>
             </div>
         </section>
@@ -113,7 +124,7 @@
     <!-- ScrollReveal (for animation) -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-        // Animate the interactive boxes and resume button
+        // Animate the interactive boxes, skills cards, and resume button
         ScrollReveal().reveal('.interactive-box', { delay: 200, distance: '20px', origin: 'bottom' });
         ScrollReveal().reveal('.btn-accent', { delay: 400, distance: '20px', origin: 'bottom' });
         ScrollReveal().reveal('.skill-card', { delay: 300, distance: '20px', origin: 'bottom', interval: 100 });

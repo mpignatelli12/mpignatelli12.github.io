@@ -17,6 +17,10 @@ body {
     /* Magenta accent */
     --hero-bg: linear-gradient(135deg, #f5f5f5, #e0e0e0);
     /* Fallback gradient */
+    /* Custom Utility Class for Accent Background */
+    .bg-accent {
+        background-color: var(--accent-cyan) !important;
+    }
 }
 
 /* Custom Brand Name Styling */
@@ -265,6 +269,18 @@ body {
 
 .social-links a:hover img {
     transform: scale(1.1);
+}
+
+/* Custom hover styles for about links */
+a.about-link {
+    color: var(--accent-magenta) !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a.about-link:hover {
+    color: var(--accent-cyan) !important;
+    text-decoration: none;
 }
 
 /* Mobile Responsiveness */

@@ -1,152 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Michael Pignatelli | Projects</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Google Font: Atkinson Hyperlegible -->
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
-        rel="stylesheet" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="icon" href="images/favicon.ico" />
+    <style>
+        /* make active filter clear */
+        .filter-btn.active { background:#0dcaf0; color:#000; border-color:#0dcaf0; }
+    </style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand brand-name" href="index.html">Michael Pignatelli</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand brand-name" href="index.html">Michael Pignatelli</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
                 aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Projects Section -->
-    <main>
-        <section class="projects py-5">
-            <div class="container">
+<!-- Projects -->
+<main>
+    <section class="projects py-5">
+        <div class="container">
+
+            <!-- Filter bar -->
+            <div class="mb-3 d-flex flex-wrap justify-content-center gap-2">
+                <button class="btn btn-outline-secondary btn-sm filter-btn" data-filter="all">All</button>
+                <button class="btn btn-outline-secondary btn-sm filter-btn" data-filter="systems">Systems</button>
+                <button class="btn btn-outline-secondary btn-sm filter-btn" data-filter="ml">ML / CV</button>
+                <button class="btn btn-outline-secondary btn-sm filter-btn" data-filter="games">Games</button>
+                <button class="btn btn-outline-secondary btn-sm filter-btn" data-filter="research">Research</button>
+            </div>
+
+            <!-- Featured -->
+            <div class="my-5 project-section" data-section="featured">
+                <h2 class="mb-2 text-center">Featured Work</h2>
+                <p class="text-center text-muted small mb-4">Last updated: Sep 2025</p>
+                <div class="row gy-4 justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card h-100 shadow-sm" data-tags="systems">
+                            <div class="card-body">
+                                <h5 class="card-title">AvalancheGo gRPC Migration — Ava Labs (Platform)</h5>
+                                <p class="text-muted small mb-1">
+                                    <strong>Role:</strong> SWE Intern &nbsp;•&nbsp;
+                                    <strong>Scope:</strong> 4 gRPC APIs (+7.5k LoC) &nbsp;•&nbsp;
+                                    <strong>Impact:</strong> ~1,800 node operators
+                                </p>
+                                <p class="card-text">
+                                    Implemented and productionized <strong>4 gRPC APIs</strong> (+7.5k LoC) to replace legacy JSON-RPC,
+                                    enabling strongly-typed communication for ~1,800 node operators and paving an incremental H2 2025 rollout.
+                                </p>
+                                <p class="mb-2">
+                                    <span class="badge bg-accent me-1">Go</span>
+                                    <span class="badge bg-accent me-1">gRPC</span>
+                                    <span class="badge bg-accent me-1">Protobuf</span>
+                                    <span class="badge bg-accent me-1">Systems</span>
+                                    <span class="badge bg-accent">Distributed</span>
+                                </p>
+                                <a href="/docs/resume.pdf" target="_blank" class="btn btn-accent">Details in Resume</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div class="my-5 project-section" data-section="projects">
                 <h2 class="mb-4 text-center">Projects</h2>
-                <div class="row gy-4">
-                    <!-- Project Card: Pedestrian Buddies -->
+                <div class="row gy-4 justify-content-center">
+
+                    <!-- PennOS -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="card h-100 shadow-sm">
+                        <div class="card h-100 shadow-sm" data-tags="systems">
+                            <div class="card-body">
+                                <h5 class="card-title">PennOS</h5>
+                                <p class="text-muted small mb-1">C • Scheduling • Shell • File System</p>
+                                <p class="card-text">
+                                    Semester-long Operating Systems project for CIS 5480.
+                                    PennOS is a Unix-like OS implemented in C with support for processes,
+                                    scheduling, signals, a custom shell, and a file system.
+                                    <em>Currently in early development (Fall 2025).</em>
+                                </p>
+                                <!-- badges (complementary to meta, not repeating every noun) -->
+                                <p class="mb-2">
+                                    <span class="badge bg-accent me-1">C</span>
+                                    <span class="badge bg-accent me-1">Processes</span>
+                                    <span class="badge bg-accent">Scheduling</span>
+                                </p>
+                                <!-- <a href="https://github.com/mpignatelli12/PennOS" target="_blank" class="btn btn-accent">View on GitHub</a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CIS 5450 Final Project -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm" data-tags="ml">
+                            <div class="card-body">
+                                <h5 class="card-title">Housing & Education Analysis</h5>
+                                <p class="text-muted small mb-1">Python • Pandas • Ridge Regression • Random Forest</p>
+                                <p class="card-text">
+                                    CIS 5450 <em>(Big Data Analytics)</em> final project analyzing the relationship between U.S. housing prices
+                                    (~1.6M rows) and state-level education spending. Applied regression models,
+                                    bootstrapping, and random forests to test hypotheses and interpret trends.
+                                </p>
+                                <p class="mb-2">
+                                    <span class="badge bg-accent me-1">Big Data</span>
+                                    <span class="badge bg-accent me-1">Ridge</span>
+                                    <span class="badge bg-accent">Random Forest</span>
+                                </p>
+                                <a href="docs/big_data_slides.pdf" target="_blank" class="btn btn-accent">View Presentation</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pedestrian Buddies -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm" data-tags="ml">
                             <div class="card-body">
                                 <h5 class="card-title">Pedestrian Buddies</h5>
+                                <p class="text-muted small mb-1">ML / CV • TensorFlow Lite • Edge deployment</p>
                                 <p class="card-text">
-                                    Integrating traffic signals with a computer vision system to detect crossing guard
-                                    gestures. Built with TensorFlow and LiteRT.
+                                    Real-time crossing-guard gesture detection (~30 FPS) on edge hardware using TensorFlow Lite;
+                                    tuned for latency and robustness under variable lighting.
                                 </p>
-                                <a href="https://github.com/mpignatelli12/PedestrianBuddies" target="_blank"
-                                    class="btn btn-accent">View on GitHub</a>
+                                <p class="mb-2">
+                                    <span class="badge bg-accent me-1">Edge ML</span>
+                                    <span class="badge bg-accent me-1">TensorFlow Lite</span>
+                                    <span class="badge bg-accent">OpenCV</span>
+                                </p>
+                                <a href="https://github.com/mpignatelli12/PedestrianBuddies" target="_blank" class="btn btn-accent">View on GitHub</a>
                             </div>
                         </div>
                     </div>
-                    <!-- Project Card: Guess Who? -->
+
+                    <!-- Rocketry Recovery System -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="card h-100 shadow-sm">
+                        <div class="card h-100 shadow-sm" data-tags="systems">
+                            <div class="card-body">
+                                <h5 class="card-title">Penn High Powered Rocketry — Recovery System</h5>
+                                <p class="text-muted small mb-1">Avionics • Simulation</p>
+                                <p class="card-text">
+                                    Designed and simulated the Level 3 recovery system for Penn’s Spaceport America Cup rocket.
+                                    Achieved <5% error between simulation and actual flight. Integrated avionics for redundancy and safe deployment.
+                                </p>
+                                <p class="mb-2">
+                                    <span class="badge bg-accent me-1">Avionics</span>
+                                    <span class="badge bg-accent me-1">Simulation</span>
+                                    <span class="badge bg-accent">L3 Recovery</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Guess Who -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm" data-tags="games">
                             <div class="card-body">
                                 <h5 class="card-title">Guess Who?</h5>
+                                <p class="text-muted small mb-1">Java Swing • Client–Server • State sync</p>
                                 <p class="card-text">
-                                    A Java Swing–based game inspired by the classic board game. Emphasizes interactive
-                                    design and user experience.
+                                    Multiplayer board-game clone emphasizing interactive UI design and consistent client–server state.
                                 </p>
-                                <a href="https://github.com/mpignatelli12/GuessWhoGame" target="_blank"
-                                    class="btn btn-accent">View on GitHub</a>
+                                <p class="mb-2">
+                                    <span class="badge bg-accent me-1">Java</span>
+                                    <span class="badge bg-accent me-1">Swing</span>
+                                    <span class="badge bg-accent">Multiplayer</span>
+                                </p>
+                                <a href="https://github.com/mpignatelli12/GuessWhoGame" target="_blank" class="btn btn-accent">View on GitHub</a>
                             </div>
                         </div>
                     </div>
-                    <!-- Project Card: Scopa! -->
+
+                    <!-- Scopa -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="card h-100 shadow-sm">
+                        <div class="card h-100 shadow-sm" data-tags="games">
                             <div class="card-body">
                                 <h5 class="card-title">Scopa!</h5>
+                                <p class="text-muted small mb-1">SwiftUI • GameCenter API • Multiplayer (WIP)</p>
                                 <p class="card-text">
-                                    A work-in-progress SwiftUI game based on the Italian card game "Scopa",
-                                    featuring multiplayer support and an interactive GUI.
+                                    WIP SwiftUI implementation of the Italian card game with live multiplayer and scoring.
                                 </p>
-                                <a href="https://github.com/mpignatelli12/Scopa" target="_blank"
-                                    class="btn btn-accent">View on GitHub</a>
+                                <p class="mb-2">
+                                    <span class="badge bg-accent me-1">Swift</span>
+                                    <span class="badge bg-accent me-1">SwiftUI</span>
+                                    <span class="badge bg-accent">GameCenter</span>
+                                </p>
+                                <a href="https://github.com/mpignatelli12/Scopa" target="_blank" class="btn btn-accent">View on GitHub</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="my-5"></div>
-            <div class="container">
+
+            <!-- Research -->
+            <div class="my-5 project-section" data-section="research">
                 <h2 class="mb-4 text-center">Research</h2>
-                <div class="d-flex justify-content-center flex-wrap gap-4">
-                    <!-- Project Card: Fed Challenge -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card h-100 shadow-sm">
+                <div class="row gy-4 justify-content-center">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="card h-100 shadow-sm" data-tags="research">
                             <div class="card-body">
                                 <h5 class="card-title">Competing in the Global Semiconductor Industry</h5>
+                                <p class="text-muted small mb-1">Economics • Supply Chains • Geopolitics</p>
                                 <p class="card-text">
-                                    Research on the economic and geopolitical dimensions of the global chip shortage.
-                                    Analyzed supply chain vulnerabilities and international strategies to secure
-                                    semiconductor production. Published in Journal of Future Economists Vol. 3.
+                                    Analyzed chip-shortage supply-chain vulnerabilities and international strategies; published in
+                                    Journal of Future Economists (Vol. 3).
                                 </p>
-                                <a href="https://www.newyorkfed.org/medialibrary/media/outreach-and-education/
-                                2023-journal-of-future-economists-economics-of-globalization" target="_blank"
-                                   class="btn btn-accent">View Article</a>
+                                <p class="mb-2">
+                                    <span class="badge bg-accent me-1">Semiconductors</span>
+                                    <span class="badge bg-accent me-1">Policy</span>
+                                    <span class="badge bg-accent">Supply Chain</span>
+                                </p>
+                                <a href="https://www.newyorkfed.org/medialibrary/media/outreach-and-education/2023-journal-of-future-economists-economics-of-globalization"
+                                   target="_blank" class="btn btn-accent">View Article</a>
                             </div>
                         </div>
                     </div>
-                    <!-- Project Card: Social Science -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card h-100 shadow-sm">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="card h-100 shadow-sm" data-tags="research">
                             <div class="card-body">
                                 <h5 class="card-title">A Novel Approach to the Nature of Kindness</h5>
+                                <p class="text-muted small mb-1">Behavior • Survey Methods • Data Analytics</p>
                                 <p class="card-text">
-                                    Survey-based research on behavioral motivation and social impact among adolescents.
-                                    Explored frameworks of intentional, random, and ‘quiet’ kindness —
-                                    informing broader questions of human-centered interaction and data-driven social research.
+                                    Survey-based study of intentional, random, and “quiet” kindness; informs human-centered interaction research.
+                                </p>
+                                <p class="mb-2">
+                                    <span class="badge bg-accent me-1">Behavior</span>
+                                    <span class="badge bg-accent me-1">Surveys</span>
+                                    <span class="badge bg-accent">Analytics</span>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="mb-5"></div>
             </div>
-        </section>
-    </main>
 
-    <!-- Footer  -->
-    <footer class="footer bg-dark text-white">
-        <div class="container text-center">
-            <p>&copy; 2025 Michael Pignatelli. All Rights Reserved.</p>
         </div>
-    </footer>
+    </section>
+</main>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- ScrollReveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script>
-        /* Reveal project cards on scroll */
-        ScrollReveal().reveal('.card', { delay: 200, distance: '20px', origin: 'bottom', interval: 100 });
-    </script>
+<!-- Footer -->
+<footer class="footer bg-dark text-white">
+    <div class="container text-center">
+        <p>&copy; 2025 Michael Pignatelli. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<script>
+    // one ScrollReveal instance
+    const sr = ScrollReveal();
+
+    // animate cards only for "All"
+    function animateVisibleCards() {
+        sr.clean('.card');
+        const visibleCols = Array.from(document.querySelectorAll('.card'))
+            .filter(card => !(card.closest('.col, [class*="col-"]') || card.parentElement).hidden);
+        visibleCols.forEach(card => {
+            sr.reveal(card, { delay: 200, distance: '20px', origin: 'bottom', interval: 100, reset: false });
+        });
+    }
+
+    const buttons  = document.querySelectorAll('.filter-btn');
+    const cards    = document.querySelectorAll('.card.h-100.shadow-sm');
+    const sections = document.querySelectorAll('.project-section');
+
+    function matchesTag(card, tag) {
+        if (tag === 'all') return true;
+        const tags = (card.getAttribute('data-tags') || '').split(/\s+/);
+        return tags.includes(tag);
+    }
+
+    function applyFilter(tag) {
+        // show/hide via hidden attribute (independent of ScrollReveal)
+        cards.forEach(card => {
+            const col = card.closest('.col, [class*="col-"]') || card.parentElement;
+            col.hidden = !matchesTag(card, tag);
+            if (tag !== 'all') {
+                card.style.opacity = 1;
+                card.style.transform = 'none';
+                card.style.visibility = 'visible';
+            }
+        });
+
+        // hide entire sections with no matches
+        sections.forEach(section => {
+            const hasMatch = Array.from(section.querySelectorAll('.card.h-100.shadow-sm'))
+                .some(card => matchesTag(card, tag));
+            section.hidden = !hasMatch;
+        });
+
+        // active button styling
+        buttons.forEach(b => b.classList.remove('active'));
+        const activeBtn = Array.from(buttons).find(b => b.dataset.filter === tag);
+        if (activeBtn) activeBtn.classList.add('active');
+
+        // animate only on "All"
+        if (tag === 'all') animateVisibleCards(); else sr.clean('.card');
+    }
+
+    // initial
+    applyFilter('all');
+    buttons.forEach(b => b.addEventListener('click', () => applyFilter(b.dataset.filter)));
+</script>
 </body>
-
 </html>

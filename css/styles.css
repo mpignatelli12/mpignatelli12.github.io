@@ -1,11 +1,7 @@
-/* Base Font and Resets */
-body {
-    font-family: 'Atkinson Hyperlegible', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Accent Colors & Variables */
+/* ================================
+   Base & Variables
+===================================*/
+body { font-family: 'Atkinson Hyperlegible', sans-serif; margin: 0; padding: 0; }
 :root{
     --primary-color:#011F5B;     /* Dark blue for navbar & footer */
     --accent-cyan:#0dcaf0;       /* Cyan accent */
@@ -13,10 +9,11 @@ body {
     --accent-magenta:#d63384;    /* Magenta accent */
     --hero-bg:linear-gradient(135deg,#f5f5f5,#e0e0e0);
 }
-
-/* Utility class must NOT be nested inside :root */
 .bg-accent{ background-color:var(--accent-cyan)!important; }
 
+/* ================================
+   Navbar / Brand
+===================================*/
 .brand-name{
     font-weight:bold;
     font-size:1.25rem;
@@ -25,92 +22,147 @@ body {
 }
 .navbar .brand-name:hover,.navbar .brand-name:focus{ color:var(--accent-magenta)!important; }
 
-/* Accent Button */
+/* ================================
+   Buttons
+===================================*/
 .btn-accent{
     background-color:var(--accent-cyan);
     border:none;
     color:#000;
     font-weight:700;
-    transition:background .4s ease;
+    transition:background .4s ease, color .2s ease;
 }
 .btn-accent:hover,.btn-accent:focus{ background-color:var(--accent-yellow); color:#000; }
 
-/* Hero */
+/* ================================
+   Hero
+===================================*/
 .hero{
-    position:relative;
-    overflow:hidden;
-    min-height:80vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    position:relative; overflow:hidden; min-height:80vh;
+    display:flex; align-items:center; justify-content:center;
 }
-#particles-js{
-    position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;
-}
+#particles-js{ position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; }
 .hero-content{
     position:relative; z-index:2; display:flex; flex-direction:column; align-items:center;
     text-align:center; max-width:90%; transform:translateY(50px);
 }
 
-/* Cards */
-.card{ border:none; border-radius:.5rem; transition:transform .3s ease, box-shadow .3s ease; }
-.card:hover{ transform:translateY(-8px) scale(1.02); box-shadow:0 8px 25px rgba(0,0,0,.15); }
-.card:hover .card-body{ border-left:4px solid var(--accent-magenta); }
+/* ================================
+   Cards (shared)
+===================================*/
+.card{
+    border:none; border-radius:.5rem;
+    transition:transform .3s ease, box-shadow .3s ease, color .3s ease;
+}
+.card .card-body{ display:flex; flex-direction:column; }
+.card .card-body .btn-accent{ margin-top:auto; align-self:flex-start; }
 .card-title{ transition:color .3s ease; }
+.card:hover{ transform:translateY(-8px) scale(1.02); box-shadow:0 8px 25px rgba(0,0,0,.15); }
 .card:hover .card-title{ color:var(--accent-magenta); }
 
-/* Active filter button */
+/* ================================
+   Project Card Hover Bar (no layout shift)
+   - Add class "project-card" to enable
+   - Add "bar-right" to move it to the right side
+===================================*/
+.project-card{ position:relative; overflow:hidden; }
+.project-card::before{
+    content:""; position:absolute; inset:0 auto 0 0;   /* left by default */
+    width:6px; background:var(--accent-magenta);
+    transform:scaleY(0); transform-origin:top;
+    transition:transform 220ms ease; pointer-events:none;
+}
+.project-card:hover::before, .project-card:focus-within::before{ transform:scaleY(1); }
+.project-card.bar-right::before{ inset:0 0 0 auto; } /* right bar variant */
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+    .project-card::before{ transition:none; transform:none; }
+    .card{ transition:none; }
+}
+
+/* ================================
+   Filters
+===================================*/
 .filter-btn.active{ background:#0dcaf0; color:#000; border-color:#0dcaf0; }
 
-/* Footer: keep fixed but avoid overlap by padding main */
-.footer{
-    position:fixed; bottom:0; width:100%; padding:10px 0;
-}
-main{ padding-bottom:80px; } /* prevents content underlap */
-
+/* ================================
+   Footer (fixed)
+===================================*/
+.footer{ position:fixed; bottom:0; width:100%; padding:10px 0; }
+main{ padding-bottom:80px; }  /* prevents content underlap */
 .footer p{ margin:0; text-align:center; color:#fff; }
 
+/* ================================
+   Credits link
+===================================*/
 .credits-link{
     position:absolute; right:10px; bottom:5px; font-size:.7rem; color:#888; text-decoration:none;
     opacity:.5; transition:opacity .3s ease;
 }
 .credits-link:hover{ opacity:1; color:var(--accent-cyan); }
 
-/* Custom cursor */
+/* ================================
+   Custom Cursor
+===================================*/
 #cursor{
     width:15px; height:15px; background-color:var(--accent-magenta); border-radius:50%;
     position:absolute; pointer-events:none; transform:translate(-50%,-50%); z-index:9999;
 }
 
-/* Interactive boxes (About) */
-.interactive-container{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; padding:1rem 0; }
-.interactive-box{
-    flex:1 1 250px; border:2px solid var(--accent-cyan); padding:20px; border-radius:10px; background:#f9f9f9;
-    transition:transform .3s ease; cursor:pointer;
+/* ================================
+   About Page Polishing
+===================================*/
+.highlight-card{
+    background:#fff; border:1px solid #eee; border-radius:.75rem;
+    padding:1.1rem 1.1rem 1rem;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+    transition:transform .25s ease, box-shadow .25s ease;
 }
-.interactive-box:hover{ transform:scale(1.03); }
-.interactive-box:hover .short-text{ color:var(--accent-magenta); }
-.interactive-box .full-text{ opacity:0; max-height:0; overflow:hidden; transition:opacity .3s ease, max-height .3s ease; margin-top:10px; }
-.interactive-box:hover .full-text{ opacity:1; max-height:100px; }
+.highlight-card:hover{ transform:translateY(-4px); box-shadow:0 10px 26px rgba(0,0,0,0.1); }
+.highlight-card h5{ margin-bottom:.25rem; }
 
-/* Slim skills (About) */
-.skills-container{ gap:1rem; justify-content:center; margin-top:2rem; }
-.skill-item{ margin:.25rem 0; transition:color .3s ease; }
-.skill-item:hover{ color:var(--accent-cyan); }
+.fact-stack { max-width: 650px; margin: 0 auto; }
+.fact-stack .fact-pill {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border:1px solid var(--accent-cyan);
+    color:#0b7285; background:#eef9fc;
+    font-size: 0.95rem;
+    padding: 0.6rem 0.9rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.fact-stack .fact-pill:not(:last-child) {
+    margin-bottom: 0.4rem;
+}
 
-/* Contact */
+/* Featured skill badges (outlined cyan — don’t compete with CTA) */
+.featured-card .badge-skill{
+    background:transparent;
+    border:1px solid var(--accent-cyan);
+    color:var(--accent-cyan);
+    font-weight:600; border-radius:.5rem; padding:.35rem .5rem;
+}
+
+/* ================================
+   Contact
+===================================*/
 .email-link{ transition:transform .3s ease, color .3s ease; }
 .email-link:hover{ transform:scale(1.05); color:var(--accent-yellow); }
 .contact-card .card-body{ transition:border .3s ease; }
 .contact-card:hover .card-body{ border-left:4px solid var(--accent-magenta); border-right:4px solid var(--accent-magenta); }
-.social-links a{ text-decoration:none; transition:transform .3s ease; }
-.social-links a:hover img{ transform:scale(1.1); }
 
-/* About anchor styling */
+/* ================================
+   About anchor styling
+===================================*/
 a.about-link{ color:var(--accent-magenta)!important; text-decoration:none; transition:color .3s ease; }
 a.about-link:hover{ color:var(--accent-cyan)!important; text-decoration:none; }
 
-/* Mobile */
+/* ================================
+   Mobile Tweaks
+===================================*/
 @media (max-width:576px){
     .brand-name{ font-size:1rem; }
     .btn-accent{ padding:8px 16px; font-size:.9rem; }

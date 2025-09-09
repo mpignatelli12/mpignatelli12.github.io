@@ -37,8 +37,7 @@
         <div class="hero-content">
             <h1 class="display-4">Hi, I'm Michael Pignatelli</h1>
             <p class="lead">
-                I build backend & ML systems — from AvalancheGo gRPC APIs used by thousands of nodes
-                to real-time vision models driving hardware.
+                I build reliable software across the stack—distributed services, production APIs, and applied ML where it adds real value.
             </p>
             <div class="mt-2 d-flex gap-2 justify-content-center">
                 <a href="projects.html" class="btn btn-accent">Explore Projects</a>
@@ -51,50 +50,21 @@
 <footer class="footer bg-dark text-white">
     <div class="container text-center">
         <p>&copy; 2025 Michael Pignatelli. All Rights Reserved.</p>
-        <a href="#" data-bs-toggle="modal" data-bs-target="#creditsModal" class="credits-link">Credits</a>
     </div>
 </footer>
-
-<div class="modal fade" id="creditsModal" tabindex="-1" aria-labelledby="creditsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="creditsModalLabel">Asset Credits</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <ul>
-                    <li>LinkedIn icon: <a href="https://www.pngfind.com/mpng/TbwhJT_linkedin-icon-vector-png-linkedin-circle-logo-transparent/" target="_blank">pngfind.com</a></li>
-                    <li>GitHub icon: <a href="https://www.shareicon.net/github-852448" target="_blank">shareicon.net</a></li>
-                    <li>Resume icon: <a href="https://icon-library.com/icon/resume-icon-png-24.html" target="_blank">icon-library.com</a></li>
-                    <li>Makes use of the Particles.js library for effects.</li>
-                    <li>Style loosely inspired by the Spring 2025 version of the <a href="https://www.cis.upenn.edu/~cis110/25sp/py/index.html" target="_blank">CIS 1100</a> website.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 <script>
     particlesJS("particles-js", {
-        "particles": {
-            "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
-            "color": { "value": "#0dcaf0" },
-            "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000" } },
-            "opacity": { "value": 0.5, "random": true },
-            "size": { "value": 3, "random": true },
-            "line_linked": { "enable": true, "distance": 150, "color": "#ffc107", "opacity": 0.4, "width": 1 },
-            "move": { "enable": true, "speed": 3 }
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-            "modes": { "repulse": { "distance": 100 } }
-        },
-        "retina_detect": true
+        "particles": {"number":{"value":60,"density":{"enable":true,"value_area":800}},
+            "color":{"value":"#0dcaf0"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000"}},
+            "opacity":{"value":0.5,"random":true},"size":{"value":3,"random":true},
+            "line_linked":{"enable":true,"distance":150,"color":"#ffc107","opacity":0.4,"width":1},
+            "move":{"enable":true,"speed":3}},
+        "interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"repulse":{"distance":100}}},
+        "retina_detect":true
     });
 
     ScrollReveal().reveal('.hero-content h1', { delay: 200, distance: '20px', origin: 'bottom' });

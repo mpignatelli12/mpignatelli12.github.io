@@ -31,53 +31,95 @@
 
 <main>
     <section class="about py-5">
-        <div class="container text-center">
-            <h2 class="mb-4">About Me</h2>
-            <p>
-                Hello! I'm Michael Pignatelli, a computer science student at the University of Pennsylvania. I specialize in
-                computer vision, AI, and creative software solutions. I'm also pursuing a second major in cognitive science
-                and a master's in computer and information science as a submatriculated student.
-            </p>
+        <div class="container">
 
-            <p class="mt-3">
-                I serve as a Head Teaching Assistant for <a href="https://cis1100.com" class="about-link" target="_blank">CIS 1100</a>,
-                helping ~300 students each semester. I manage a team of 40+ TAs, collaborate with faculty to update curriculum and
-                author exams, and lead weekly staff meetings. I teach data structures, recursion, OOP, functional programming, and pandas.
-            </p>
-
-            <p class="mt-3">
-                Most recently, I interned on the Platform Team at <a href="https://www.avalabs.org" class="about-link" target="_blank">Ava Labs</a>
-                (AvalancheGo): implemented and productionized <strong>4 gRPC APIs</strong> (+7.5k LoC) to replace legacy JSON-RPC,
-                enabling strongly-typed communication for ~1,800 node operators.
-            </p>
-
-            <!-- Interactive "Did You Know?" -->
-            <div class="interactive-container mt-4">
-                <div class="interactive-box">
-                    <p class="short-text"><strong>Did you know?</strong></p>
-                    <p class="full-text">I built my first PC when I was 11 — that project set me on the CS path.</p>
-                </div>
-                <div class="interactive-box">
-                    <p class="short-text"><strong>Did you know?</strong></p>
-                    <p class="full-text">I'm active in Penn's High Powered Rocketry team (recovery & avionics).</p>
-                </div>
-                <div class="interactive-box">
-                    <p class="short-text"><strong>Did you know?</strong></p>
-                    <p class="full-text">I’ve played clarinet for over a decade.</p>
+            <!-- Intro -->
+            <div class="row justify-content-center">
+                <div class="col-lg-9 text-center">
+                    <h2 class="mb-3">About Me</h2>
+                    <p class="lead mb-3">
+                        I’m a student at the University of Pennsylvania studying Computer Science and Cognitive Science.
+                        I focus on building <strong>backend infrastructure and applied ML systems</strong>—from production APIs and distributed services
+                        to models that run efficiently in real-world settings.
+                    </p>
+                    <p class="text-muted">
+                        Alongside my undergraduate studies, I’m pursuing an <strong>accelerated MSE in Computer and Information Science</strong> at Penn,
+                        where I’ll deepen my work in systems and applied machine learning.
+                        I enjoy tackling complex, user-facing problems and turning them into clean, dependable interfaces.
+                    </p>
                 </div>
             </div>
 
-            <!-- Slim, recruiter-focused skills -->
-            <div class="skills-container mt-5 text-start mx-auto" style="max-width: 720px;">
-                <h5>Strengths</h5>
-                <p class="mb-2"><strong>Systems / Backend:</strong> Go, C/C++, gRPC, Protobuf, Docker</p>
-                <p class="mb-2"><strong>ML / CV:</strong> TensorFlow Lite, PyTorch, training & fine-tuning, on-device inference</p>
-                <p class="mb-2"><strong>Languages / Tools:</strong> Python, Java, GitHub, SQL, Swift (basic)</p>
+            <!-- Highlights (short narrative; no duplicate metrics from Projects) -->
+            <div class="row g-4 mt-2 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="highlight-card h-100">
+                        <h5 class="mb-2">Ava Labs — Platform</h5>
+                        <p class="mb-2 small text-muted">Go • gRPC • Protobuf • Systems</p>
+                        <p class="mb-3">
+                            I worked on AvalancheGo, implementing gRPC services that modernized node communication and paved the path for broader adoption.
+                        </p>
+                        <a href="/docs/resume.pdf" target="_blank" class="btn btn-accent btn-sm">Details in Resume</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="highlight-card h-100">
+                        <h5 class="mb-2">Head TA — CIS 1100</h5>
+                        <p class="mb-2 small text-muted">Leadership • Curriculum • Tooling</p>
+                        <p class="mb-3">
+                            Helped introduce ~300 students/semester to CS. Managed a team of 40+ TAs, co-authored exams, and led weekly staff meetings.
+                        </p>
+                        <a href="https://cis1100.com" target="_blank" class="btn btn-outline-dark btn-sm">Course Site</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="highlight-card h-100">
+                        <h5 class="mb-2">Research & Projects</h5>
+                        <p class="mb-2 small text-muted">Applied ML • Systems • Economics</p>
+                        <p class="mb-3">
+                            Published on the global semiconductor industry; built edge CV for traffic safety; and (in progress) a Unix-like OS for coursework.
+                        </p>
+                        <a href="projects.html" class="btn btn-outline-dark btn-sm">See Projects</a>
+                    </div>
+                </div>
             </div>
 
-            <div class="text-center mt-4 mb-4">
-                <a href="/docs/resume.pdf" target="_blank" class="btn btn-accent">View My Resume</a>
+            <!-- Skills (grouped by how you want to be hired) -->
+            <div class="skills-container mt-5 text-start mx-auto" style="max-width: 900px;">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <h5>Systems / Backend</h5>
+                        <p class="mb-2">Go, C/C++, gRPC, Protobuf, Docker, Cloudflare</p>
+                        <h5 class="mt-4">Applied ML / CV</h5>
+                        <p class="mb-2">TensorFlow, PyTorch, Keras, edge deployment, RAG, NLP</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Programming Languages</h5>
+                        <p class="mb-2">Python, Java, OCaml, SQL, Swift, HTML/CSS</p>
+                        <h5 class="mt-4">Teamwork & Teaching</h5>
+                        <p class="mb-2">Managing 40+ TAs, curriculum design, large-scale instruction</p>
+                    </div>
+                </div>
             </div>
+
+            <!-- Fact Pills -->
+            <div class="mt-5 text-center">
+                <h5 class="mb-3">Beyond Code</h5>
+                <div class="d-flex flex-column align-items-center gap-2 fact-stack">
+                    <span class="fact-pill">🏛 Drawn to architecture and design — almost majored in it before choosing CS.</span>
+                    <span class="fact-pill">🚤 Licensed to pilot a boat in NY, though I’ve yet to take the helm.</span>
+                    <span class="fact-pill">🎨 Fan of Renaissance art and history; love connecting tech with cultural context.</span>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-5">
+                <a href="/docs/resume.pdf" target="_blank" class="btn btn-accent">Download Resume</a>
+                <a href="projects.html" class="btn btn-outline-dark ms-2">Explore Projects</a>
+            </div>
+
         </div>
     </section>
 </main>
@@ -91,9 +133,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 <script>
-    ScrollReveal().reveal('.interactive-box', { delay: 200, distance: '20px', origin: 'bottom' });
-    ScrollReveal().reveal('.btn-accent', { delay: 400, distance: '20px', origin: 'bottom' });
-    ScrollReveal().reveal('.skills-container', { delay: 300, distance: '20px', origin: 'bottom' });
+    ScrollReveal().reveal('.highlight-card', { delay: 150, distance: '20px', origin: 'bottom', interval: 80 });
+    ScrollReveal().reveal('.skills-container', { delay: 200, distance: '20px', origin: 'bottom' });
+    ScrollReveal().reveal('.fact-pill', { delay: 250, distance: '10px', origin: 'bottom', interval: 60 });
 </script>
 </body>
 </html>
